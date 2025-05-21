@@ -21,7 +21,11 @@
             </ul>
         </nav>
     </header>
-
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
     <main>
         <section class="resources-container">
             <div class="resource-section" id="logement">
@@ -52,5 +56,10 @@
             <p>&copy; 2025 <a href="https://www.robust-code.com" target="_blank">ROBUST CODE</a>. All rights reserved.</p>
         </footer>
     </main>
+    <script>
+        function toggleMenu() {
+            document.querySelector('nav ul').classList.toggle('show');
+        }
+    </script>
 </body>
 </html>

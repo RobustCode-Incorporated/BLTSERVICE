@@ -35,6 +35,8 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex; /* Aligne les éléments du menu horizontalement */
+    max-width: 100vw;
+    box-sizing: border-box;
 }
 
 nav ul li {
@@ -58,7 +60,8 @@ nav ul li a:hover {
 /* Styles responsive */
 @media screen and (max-width: 768px) {
     header h1 {
-        font-size: 2em;
+        font-size: 1.5em;
+        word-break: break-word;
     }
 
     nav ul {
@@ -68,6 +71,28 @@ nav ul li a:hover {
 
     nav ul li {
         margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 1em;
+    }
+
+    body {
+        padding: 0 10px;
+    }
+
+    .resource-section h2 {
+        font-size: 1.5em;
+    }
+
+    .resource-section p,
+    .resource-section a {
+        font-size: 0.95em;
+    }
+
+    .resource-section {
+        padding: 20px;
+        word-break: break-word;
     }
 }
 
@@ -83,6 +108,7 @@ body {
     text-align: center;
     color: white;
     position: relative;
+    overflow-x: hidden;
 }
 
 /* Overlay sombre pour meilleure lisibilité */
@@ -150,7 +176,8 @@ body::before {
 /* Styles responsive */
 @media screen and (max-width: 768px) {
     header h1 {
-        font-size: 2em;
+        font-size: 1.5em;
+        word-break: break-word;
     }
 
     nav ul {
@@ -170,6 +197,17 @@ body::before {
 
     .resource-section {
         width: 80%;
+        padding: 20px;
+        word-break: break-word;
+    }
+
+    .resource-section h2 {
+        font-size: 1.5em;
+    }
+
+    .resource-section p,
+    .resource-section a {
+        font-size: 0.95em;
     }
 }
 
@@ -196,4 +234,72 @@ body::before {
 .footer a:hover {
     color: #d1e7f4; /* Couleur douce au survol */
     text-shadow: 0 0 10px #d1e7f4, 0 0 20px #d1e7f4, 0 0 30px #d1e7f4; /* Effet de glow bleu */
+}
+
+/* Bouton de menu burger pour petits écrans */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 1100;
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 25px;
+    background: white;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:hover span {
+    background-color: #d1e7f4;
+    box-shadow: 0 0 10px #d1e7f4, 0 0 20px #d1e7f4, 0 0 30px #d1e7f4;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        width: 200px;
+        padding: 10px;
+        border-radius: 5px;
+        z-index: 1001;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    nav ul li a:hover {
+        color: #d1e7f4;
+        text-shadow: 0 0 10px #d1e7f4, 0 0 20px #d1e7f4, 0 0 30px #d1e7f4;
+    }
+
+    .resources-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .resource-section {
+        width: 80%;
+    }
 }
